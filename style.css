@@ -50,16 +50,21 @@ nav a {
 }
 nav a:hover { color: #f7f1dc; opacity: 0.9; }
 
-/* Centered banner */
+/* Centered full-width banner image */
 .logo-banner {
+  width: 100%;
+  background-color: #8c5b2e; /* keep same tone as header for seamless blend */
   text-align: center;
-  padding: 0.75rem 0 1.5rem;
+  padding: 0;
+  margin: 0;
 }
+
 .logo-banner img {
-  width: 240px;
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ===== Hero ===== */
