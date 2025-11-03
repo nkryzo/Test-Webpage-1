@@ -9,36 +9,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Cormorant Garamond', serif;
-      background-color: #f7f1dc; /* light cream */
+      background-color: #f7f1dc;   /* light cream */
       color: #2f2f2f;
       text-align: center;
       font-size: 18px;
       line-height: 1.6;
     }
 
+    /* Header / Navbar (centered logo, right-aligned nav) */
     header {
-      background-color: #8c5b2e; /* terracotta */
+      background-color: #8c5b2e;   /* terracotta */
       color: #fff;
-      padding: 2rem 0;
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 3.2rem;
-      letter-spacing: 2px;
+    .navbar {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;     /* centers the logo */
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.9rem;
       font-weight: 600;
+      letter-spacing: 1px;
+      text-align: center;
     }
-
-    header p {
-      margin: 0.5rem 0 0;
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.2rem;
+    /* Right-aligned nav */
+    nav {
+      position: absolute;
+      right: 2rem;                 /* push menu to the far right */
+      top: 50%;
+      transform: translateY(-50%); /* vertically center in header */
     }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+    nav a:hover { color: #f7f1dc; opacity: 0.9; }
 
+    /* Hero */
     .hero img {
       width: 640px;
       max-width: 100%;
@@ -48,6 +78,7 @@
       display: block;
     }
 
+    /* Divider */
     hr {
       width: 80%;
       border: none;
@@ -55,6 +86,7 @@
       margin: 2rem auto;
     }
 
+    /* Gallery */
     .gallery {
       display: flex;
       justify-content: center;
@@ -62,70 +94,84 @@
       flex-wrap: wrap;
       margin-bottom: 3rem;
     }
-
-    .gallery .item {
-      width: 150px;
-    }
-
+    .gallery .item { width: 150px; }
     .gallery img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 10px;
-      background-color: #556b2f; /* fallback bg */
+      background-color: #556b2f; /* fallback while loading */
       display: block;
       margin: 0 auto;
     }
-
     .gallery p {
       margin-top: 0.5rem;
       font-weight: 500;
       color: #8c5b2e;
       font-size: 1rem;
     }
+
+    /* Mobile tweaks */
+    @media (max-width: 720px) {
+      .navbar {
+        flex-direction: column;    /* stack logo and nav */
+        gap: 0.5rem;
+        padding: 0 1rem;
+      }
+      nav {
+        position: static;          /* let nav flow below logo on mobile */
+        transform: none;
+        width: 100%;
+      }
+      nav ul {
+        justify-content: center;   /* center menu on small screens */
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-  <div class="navbar">
-    <div class="logo">ARU</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">The Story</a></li>
-        <li><a href="#">The Vision</a></li>
-        <li><a href="#">The Mission</a></li>
-        <li><a href="#">Store</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <div class="navbar">
+      <div class="logo">ARU</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">The Story</a></li>
+          <li><a href="#">The Vision</a></li>
+          <li><a href="#">The Mission</a></li>
+          <li><a href="#">Store</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main>
-  <section class="hero">
-    <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/candle1.jpeg" alt="ARU main image">
-  </section>
+  <main>
+    <section class="hero">
+      <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/candle1.jpeg" alt="ARU main image">
+    </section>
 
-  <hr>
+    <hr>
 
-  <section class="gallery">
-    <div class="item">
-      <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/difusor1.jpeg" alt="Difusor">
-      <p>Difusor</p>
-    </div>
-    <div class="item">
-      <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/hand%20cream1.jpeg" alt="Crema de manos">
-      <p>Crema de manos</p>
-    </div>
-    <div class="item">
-      <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/perfume1.jpeg" alt="Perfume">
-      <p>Perfume</p>
-    </div>
-    <div class="item">
-      <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/textile%20perfume%20spray1.jpeg" alt="Textile perfume spray">
-      <p>Textile perfume spray</p>
-    </div>
-  </section>
-</main>
+    <section class="gallery">
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/difusor1.jpeg" alt="Difusor">
+        <p>Difusor</p>
+      </div>
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/hand%20cream1.jpeg" alt="Crema de manos">
+        <p>Crema de manos</p>
+      </div>
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/perfume1.jpeg" alt="Perfume">
+        <p>Perfume</p>
+      </div>
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/textile%20perfume%20spray1.jpeg" alt="Textile perfume spray">
+        <p>Textile perfume spray</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
