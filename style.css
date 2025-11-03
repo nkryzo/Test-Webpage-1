@@ -1,4 +1,4 @@
-/* Brand font is loaded via <link> in HTML */
+/* Brand font loaded from HTML */
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
@@ -6,22 +6,20 @@ html, body { margin: 0; padding: 0; }
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  background-color: #f7f1dc;   /* light cream */
   color: #2f2f2f;
   text-align: center;
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* ===== Sticky Nav Bar (top) ===== */
+/* ===== Sticky Nav Bar ===== */
 .navbar {
-  position: sticky;          /* sticks to top on scroll */
+  position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #8c5b2e; /* terracotta */
   color: #fff;
   width: 100%;
-  border-bottom: 0 solid transparent;
 }
 
 .nav-inner {
@@ -29,7 +27,7 @@ body {
   margin: 0 auto;
   padding: 0.75rem 2rem;
   display: flex;
-  justify-content: flex-end; /* menu to the right */
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -50,16 +48,24 @@ nav a {
 }
 nav a:hover { color: #f7f1dc; opacity: 0.9; }
 
-/* ===== Full-width banner below nav ===== */
+/* ===== Banner below nav (scrolls away normally) ===== */
 .logo-banner {
   width: 100%;
-  background-color: #8c5b2e;  /* same tone to blend with nav */
+  background-color: #8c5b2e;
 }
 .logo-banner img {
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+/* ===== Background for all content below the banner ===== */
+main {
+  background: url('https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/terracota%20bg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: scroll; /* makes it scroll away with content */
+  padding-top: 2rem;
 }
 
 /* ===== Hero ===== */
@@ -96,7 +102,7 @@ hr {
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
-  background-color: #556b2f; /* fallback while loading */
+  background-color: #556b2f;
   display: block;
   margin: 0 auto;
 }
