@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Site styles -->
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
@@ -42,25 +42,64 @@
 
     <hr>
 
-    <section class="gallery">
+    <section class="gallery" aria-label="Featured products">
       <div class="item">
         <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/difusor1.jpeg" alt="Difusor">
-        <p>Difusor</p>
+        <a class="caption" href="#">Difusor</a>
       </div>
       <div class="item">
         <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/hand%20cream1.jpeg" alt="Crema de manos">
-        <p>Crema de manos</p>
+        <a class="caption" href="#">Crema de manos</a>
       </div>
       <div class="item">
         <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/perfume1.jpeg" alt="Perfume">
-        <p>Perfume</p>
+        <a class="caption" href="#">Perfume</a>
       </div>
       <div class="item">
         <img src="https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/textile%20perfume%20spray1.jpeg" alt="Textile perfume spray">
-        <p>Textile perfume spray</p>
+        <a class="caption" href="#">Textile perfume spray</a>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-columns">
+        <div class="col">
+          <h4>ARU</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Terms</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Join our world</h4>
+          <form class="newsletter" action="#" method="post" onsubmit="return false;">
+            <input type="email" placeholder="Email" aria-label="Email">
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 ARU. All rights reserved.</span>
+        <span class="country">Venezuela</span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
