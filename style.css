@@ -1,58 +1,36 @@
-/* Brand font */
+/* Brand font (remove this if you keep the <link> in HTML) */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
+html, body { margin: 0; padding: 0; }
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  background-color: #f7f1dc;   /* light cream */
+  background-color: #f7f1dc;
   color: #2f2f2f;
   text-align: center;
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* ===== Header / Navbar (centered logo, right-aligned nav) ===== */
+/* ===== Header / Navbar (right-aligned nav, banner below) ===== */
 header {
-  background-color: #8c5b2e;   /* terracotta */
+  background-color: #8c5b2e;
   color: #fff;
-  padding: 0.75rem 0;
+  padding-top: 0.75rem;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 .navbar {
-  position: relative;
+  display: flex;
+  justify-content: flex-end;   /* nav on the right */
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-
-  /* center the logo vertically & horizontally within the bar */
-  display: flex;
-  justify-content: center;     /* centers the logo */
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-/* Right-aligned nav */
-nav {
-  position: absolute;
-  right: 2rem;                 /* push menu to the far right */
-  top: 50%;
-  transform: translateY(-50%); /* vertically center in header */
 }
 
 nav ul {
@@ -70,10 +48,18 @@ nav a {
   font-size: 1.05rem;
   transition: color 0.25s ease, opacity 0.25s ease;
 }
+nav a:hover { color: #f7f1dc; opacity: 0.9; }
 
-nav a:hover {
-  color: #f7f1dc;              /* soft cream hover */
-  opacity: 0.9;
+/* Centered banner */
+.logo-banner {
+  text-align: center;
+  padding: 0.75rem 0 1.5rem;
+}
+.logo-banner img {
+  width: 240px;
+  max-width: 90%;
+  height: auto;
+  display: inline-block;
 }
 
 /* ===== Hero ===== */
@@ -102,21 +88,16 @@ hr {
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
-
-.gallery .item {
-  width: 150px;
-}
-
+.gallery .item { width: 150px; }
 .gallery img {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
-  background-color: #556b2f; /* fallback color while loading */
+  background-color: #556b2f;
   display: block;
   margin: 0 auto;
 }
-
 .gallery p {
   margin-top: 0.5rem;
   font-weight: 500;
@@ -124,20 +105,15 @@ hr {
   font-size: 1rem;
 }
 
-/* ===== Responsive tweaks ===== */
+/* ===== Responsive ===== */
 @media (max-width: 720px) {
   .navbar {
-    flex-direction: column;    /* stack logo and nav */
+    flex-direction: column;
     gap: 0.5rem;
     padding: 0 1rem;
   }
-  nav {
-    position: static;          /* let nav flow below logo on mobile */
-    transform: none;
-    width: 100%;
-  }
   nav ul {
-    justify-content: center;   /* centered menu on small screens */
+    justify-content: center;
     gap: 1.25rem;
     flex-wrap: wrap;
   }
