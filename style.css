@@ -1,5 +1,4 @@
-/* Brand font (remove this if you keep the <link> in HTML) */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+/* Brand font is loaded via <link> in HTML */
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
@@ -7,30 +6,31 @@ html, body { margin: 0; padding: 0; }
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  background-color: #f7f1dc;
+  background-color: #f7f1dc;   /* light cream */
   color: #2f2f2f;
   text-align: center;
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* ===== Header / Navbar (right-aligned nav, banner below) ===== */
-header {
-  background-color: #8c5b2e;
-  color: #fff;
-  padding-top: 0.75rem;
-  position: sticky;
+/* ===== Sticky Nav Bar (top) ===== */
+.navbar {
+  position: sticky;          /* sticks to top on scroll */
   top: 0;
-  z-index: 10;
+  z-index: 1000;
+  background-color: #8c5b2e; /* terracotta */
+  color: #fff;
+  width: 100%;
+  border-bottom: 0 solid transparent;
 }
 
-.navbar {
-  display: flex;
-  justify-content: flex-end;   /* nav on the right */
-  align-items: center;
+.nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: flex-end; /* menu to the right */
+  align-items: center;
 }
 
 nav ul {
@@ -50,21 +50,16 @@ nav a {
 }
 nav a:hover { color: #f7f1dc; opacity: 0.9; }
 
-/* Centered full-width banner image */
+/* ===== Full-width banner below nav ===== */
 .logo-banner {
   width: 100%;
-  background-color: #8c5b2e; /* keep same tone as header for seamless blend */
-  text-align: center;
-  padding: 0;
-  margin: 0;
+  background-color: #8c5b2e;  /* same tone to blend with nav */
 }
-
 .logo-banner img {
+  display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 /* ===== Hero ===== */
@@ -93,16 +88,19 @@ hr {
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
+
 .gallery .item { width: 150px; }
+
 .gallery img {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
-  background-color: #556b2f;
+  background-color: #556b2f; /* fallback while loading */
   display: block;
   margin: 0 auto;
 }
+
 .gallery p {
   margin-top: 0.5rem;
   font-weight: 500;
@@ -112,14 +110,6 @@ hr {
 
 /* ===== Responsive ===== */
 @media (max-width: 720px) {
-  .navbar {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0 1rem;
-  }
-  nav ul {
-    justify-content: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-  }
+  .nav-inner { padding: 0.75rem 1rem; }
+  nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
 }
