@@ -1,4 +1,4 @@
-/* Brand font loaded from HTML */
+/* Brand font is loaded via <link> in HTML */
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
@@ -49,22 +49,13 @@ nav a {
 nav a:hover { color: #f7f1dc; opacity: 0.9; }
 
 /* ===== Banner below nav (scrolls away normally) ===== */
-.logo-banner {
-  width: 100%;
-  background-color: #8c5b2e;
-}
-.logo-banner img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
+.logo-banner { width: 100%; background-color: #8c5b2e; }
+.logo-banner img { display: block; width: 100%; max-width: 100%; height: auto; }
 
 /* ===== Background for all content below the banner ===== */
 main {
-  background: url('https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/terracota%20bg.jpeg') no-repeat center center fixed;
+  background: url('https://raw.githubusercontent.com/nkryzo/Test-Webpage-1/main/terracota%20bg.jpeg') no-repeat center center;
   background-size: cover;
-  background-attachment: scroll; /* makes it scroll away with content */
   padding-top: 2rem;
 }
 
@@ -76,6 +67,7 @@ main {
   border-radius: 10px;
   margin: 2rem auto;
   display: block;
+  box-shadow: 0 6px 24px rgba(0,0,0,.12);
 }
 
 /* ===== Divider ===== */
@@ -94,7 +86,6 @@ hr {
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
-
 .gallery .item { width: 150px; }
 
 .gallery img {
@@ -104,18 +95,96 @@ hr {
   border-radius: 10px;
   background-color: #556b2f;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 0.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 
-.gallery p {
-  margin-top: 0.5rem;
-  font-weight: 500;
-  color: #8c5b2e;
+/* clickable captions: white text */
+.gallery .caption {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
   font-size: 1rem;
+  transition: opacity .2s ease, text-decoration-color .2s ease;
 }
+.gallery .caption:hover { opacity: .9; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ===== Footer (same background as header) ===== */
+.site-footer {
+  background-color: #8c5b2e; /* terracotta */
+  color: #fff;
+  margin-top: 3rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 1.5rem;
+}
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+.site-footer h4 {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin: .4rem 0; }
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity .2s ease, color .2s ease;
+}
+.site-footer a:hover { opacity: .9; color: #f7f1dc; }
+
+.newsletter {
+  display: flex;
+  gap: .5rem;
+  margin: .5rem 0 1rem;
+}
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  border-radius: 6px;
+  padding: .6rem .75rem;
+  font-family: inherit;
+}
+.newsletter button {
+  border: 0;
+  border-radius: 6px;
+  padding: .6rem .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+  color: #8c5b2e;
+}
+.socials { display: flex; gap: 1rem; }
+.socials a { font-weight: 600; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.25);
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .95rem;
+  opacity: .95;
+}
+.footer-bottom .country { font-weight: 600; }
 
 /* ===== Responsive ===== */
+@media (max-width: 920px) {
+  .footer-columns { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 720px) {
   .nav-inner { padding: 0.75rem 1rem; }
   nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .footer-columns { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: center; }
 }
