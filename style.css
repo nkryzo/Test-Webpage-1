@@ -1,45 +1,92 @@
-/* Import elegant serif font from Google Fonts */
+/* Brand font */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
 
-body {
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
+html, body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Cormorant Garamond', serif;
-  background-color: #f7f1dc; /* light cream */
+  background-color: #f7f1dc;   /* light cream */
   color: #2f2f2f;
   text-align: center;
   font-size: 18px;
   line-height: 1.6;
 }
 
+/* ===== Header / Navbar (centered logo, right-aligned nav) ===== */
 header {
-  background-color: #8c5b2e; /* terracotta */
+  background-color: #8c5b2e;   /* terracotta */
   color: #fff;
-  padding: 2rem 0;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 3.2rem;
-  letter-spacing: 2px;
+.navbar {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  /* center the logo vertically & horizontally within the bar */
+  display: flex;
+  justify-content: center;     /* centers the logo */
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.9rem;
   font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
-header p {
-  margin: 0.5rem 0 0;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.2rem;
+/* Right-aligned nav */
+nav {
+  position: absolute;
+  right: 2rem;                 /* push menu to the far right */
+  top: 50%;
+  transform: translateY(-50%); /* vertically center in header */
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+nav a:hover {
+  color: #f7f1dc;              /* soft cream hover */
+  opacity: 0.9;
+}
+
+/* ===== Hero ===== */
 .hero img {
   width: 640px;
-  max-width: 100%; /* responsive fix */
+  max-width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   margin: 2rem auto;
   display: block;
 }
 
+/* ===== Divider ===== */
 hr {
   width: 80%;
   border: none;
@@ -47,6 +94,7 @@ hr {
   margin: 2rem auto;
 }
 
+/* ===== Gallery ===== */
 .gallery {
   display: flex;
   justify-content: center;
@@ -64,7 +112,9 @@ hr {
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
-  background-color: #556b2f; /* olive green placeholder */
+  background-color: #556b2f; /* fallback color while loading */
+  display: block;
+  margin: 0 auto;
 }
 
 .gallery p {
@@ -72,4 +122,23 @@ hr {
   font-weight: 500;
   color: #8c5b2e;
   font-size: 1rem;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 720px) {
+  .navbar {
+    flex-direction: column;    /* stack logo and nav */
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  nav {
+    position: static;          /* let nav flow below logo on mobile */
+    transform: none;
+    width: 100%;
+  }
+  nav ul {
+    justify-content: center;   /* centered menu on small screens */
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
 }
