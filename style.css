@@ -1,4 +1,4 @@
-/* Brand font is loaded via <link> in HTML */
+/* Brand font loads in HTML */
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
@@ -11,6 +11,9 @@ body {
   font-size: 18px;
   line-height: 1.6;
 }
+
+/* Reset default link styles; we'll control colors per section */
+a { color: inherit; text-decoration: none; }
 
 /* ===== Sticky Nav Bar ===== */
 .navbar {
@@ -40,15 +43,14 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
-  color: #fff;
+  color: #fff;                        /* ensure white in nav */
   font-weight: 500;
   font-size: 1.05rem;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition: color .25s ease, opacity .25s ease;
 }
-nav a:hover { color: #f7f1dc; opacity: 0.9; }
+nav a:hover { color: #f7f1dc; opacity: .9; }
 
-/* ===== Banner below nav (scrolls away normally) ===== */
+/* ===== Banner below nav (scrolls away) ===== */
 .logo-banner { width: 100%; background-color: #8c5b2e; }
 .logo-banner img { display: block; width: 100%; max-width: 100%; height: auto; }
 
@@ -95,24 +97,24 @@ hr {
   border-radius: 10px;
   background-color: #556b2f;
   display: block;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto .6rem;
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 
-/* clickable captions: white text */
+/* Captions: white, clickable, no underline (even on hover) */
 .gallery .caption {
   display: inline-block;
-  text-decoration: none;
-  color: #ffffff;
+  color: #ffffff;          /* force white */
   font-weight: 600;
   font-size: 1rem;
-  transition: opacity .2s ease, text-decoration-color .2s ease;
+  text-decoration: none;   /* no underline */
+  transition: opacity .2s ease;
 }
-.gallery .caption:hover { opacity: .9; text-decoration: underline; text-underline-offset: 3px; }
+.gallery .caption:hover { opacity: .9; text-decoration: none; }
 
-/* ===== Footer (same background as header) ===== */
+/* ===== Footer (same color as header) ===== */
 .site-footer {
-  background-color: #8c5b2e; /* terracotta */
+  background-color: #8c5b2e;
   color: #fff;
   margin-top: 3rem;
 }
@@ -128,14 +130,14 @@ hr {
   align-items: start;
 }
 .site-footer h4 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 .75rem;
   font-weight: 600;
   letter-spacing: .5px;
 }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { margin: .4rem 0; }
 .site-footer a {
-  color: #fff;
+  color: #fff;                 /* white links in footer */
   text-decoration: none;
   transition: opacity .2s ease, color .2s ease;
 }
