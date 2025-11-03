@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background-color: #f7f1dc; /* light cream */
+  color: #2f2f2f;
+  text-align: center;
+}
+
+header {
+  background-color: #8c5b2e; /* terracotta */
+  color: #fff;
+  padding: 2rem 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-style: italic;
+}
+
+.hero img {
+  width: 640px;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  margin: 2rem auto;
+  display: block;
+}
+
+hr {
+  width: 80%;
+  border: none;
+  border-top: 2px solid #8c5b2e;
+  margin: 2rem auto;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.gallery .item {
+  width: 150px;
+}
+
+.gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #556b2f; /* olive green placeholder */
+}
+
+.gallery p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #8c5b2e;
+}
