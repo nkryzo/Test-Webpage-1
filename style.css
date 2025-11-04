@@ -61,15 +61,16 @@ main {
   padding-top: 2rem;
 }
 
-/* ===== Hero ===== */
+/* ===== Hero (no forced aspect ratio; maintains original proportions) ===== */
 .hero img {
-  width: 640px;
-  max-width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 10px;
-  margin: 2rem auto;
   display: block;
+  width: min(900px, 95vw);  /* large but responsive */
+  height: auto;             /* keep natural aspect */
+  max-height: 80vh;         /* avoid overly tall on desktops */
+  border-radius: 12px;
+  margin: 2rem auto;
   box-shadow: 0 6px 24px rgba(0,0,0,.12);
+  object-fit: contain;      /* just in case a height is imposed elsewhere */
 }
 
 /* ===== Divider ===== */
